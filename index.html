@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A sleek, modern calculator with keyboard support, built with HTML, CSS, and JavaScript for the CodeAlpha internship project." />
+  <title>Quantum Calc — CodeAlpha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background orbs -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <main class="page-wrapper">
+    <div class="calculator-shell" role="application" aria-label="Calculator">
+
+      <!-- Header badge -->
+      <div class="calc-badge">
+        <span class="badge-dot"></span>
+        <span>Quantum Calc</span>
+      </div>
+
+      <!-- Display panel -->
+      <section class="display-panel" aria-label="Calculator display">
+        <div class="expression-row" id="expressionDisplay" aria-label="Expression" aria-live="polite"></div>
+        <div class="result-row">
+          <div class="result-value" id="resultDisplay" aria-label="Result" aria-live="assertive">0</div>
+          <div class="result-unit" id="resultUnit"></div>
+        </div>
+        <div class="display-meta">
+          <span class="keyboard-hint" id="keyboardHint">⌨ Keyboard ready</span>
+          <span class="mode-label" id="modeLabel">Standard</span>
+        </div>
+      </section>
+
+      <!-- History panel (collapsible) -->
+      <div class="history-panel" id="historyPanel" aria-label="Calculation history">
+        <div class="history-header">
+          <span>History</span>
+          <button class="history-clear-btn" id="clearHistoryBtn" aria-label="Clear history">Clear</button>
+        </div>
+        <ul class="history-list" id="historyList" aria-label="Past calculations"></ul>
+        <p class="history-empty" id="historyEmpty">No history yet</p>
+      </div>
+
+      <!-- Button grid -->
+      <div class="btn-grid" id="btnGrid">
+
+        <!-- Row 1 — utility -->
+        <button class="calc-btn btn-utility btn-wide" id="btnClear"    data-action="clear"    aria-label="Clear all">C</button>
+        <button class="calc-btn btn-utility"           id="btnToggle"   data-action="toggle"   aria-label="Toggle sign">±</button>
+        <button class="calc-btn btn-utility"           id="btnPercent"  data-action="percent"  aria-label="Percentage">%</button>
+        <button class="calc-btn btn-history"           id="btnHistory"  data-action="history"  aria-label="Toggle history">🕘</button>
+
+        <!-- Row 2 -->
+        <button class="calc-btn btn-number" id="btn7"    data-value="7"   aria-label="7">7</button>
+        <button class="calc-btn btn-number" id="btn8"    data-value="8"   aria-label="8">8</button>
+        <button class="calc-btn btn-number" id="btn9"    data-value="9"   aria-label="9">9</button>
+        <button class="calc-btn btn-operator" id="btnDiv"  data-action="operator" data-value="÷" aria-label="Divide">÷</button>
+
+        <!-- Row 3 -->
+        <button class="calc-btn btn-number" id="btn4"    data-value="4"   aria-label="4">4</button>
+        <button class="calc-btn btn-number" id="btn5"    data-value="5"   aria-label="5">5</button>
+        <button class="calc-btn btn-number" id="btn6"    data-value="6"   aria-label="6">6</button>
+        <button class="calc-btn btn-operator" id="btnMul"  data-action="operator" data-value="×" aria-label="Multiply">×</button>
+
+        <!-- Row 4 -->
+        <button class="calc-btn btn-number" id="btn1"    data-value="1"   aria-label="1">1</button>
+        <button class="calc-btn btn-number" id="btn2"    data-value="2"   aria-label="2">2</button>
+        <button class="calc-btn btn-number" id="btn3"    data-value="3"   aria-label="3">3</button>
+        <button class="calc-btn btn-operator" id="btnSub"  data-action="operator" data-value="−" aria-label="Subtract">−</button>
+
+        <!-- Row 5 -->
+        <button class="calc-btn btn-number btn-zero" id="btn0"   data-value="0"   aria-label="0">0</button>
+        <button class="calc-btn btn-number" id="btnDot"  data-action="decimal" aria-label="Decimal point">.</button>
+        <button class="calc-btn btn-backspace" id="btnBack"  data-action="backspace" aria-label="Backspace">⌫</button>
+        <button class="calc-btn btn-operator" id="btnAdd"  data-action="operator" data-value="+" aria-label="Add">+</button>
+
+        <!-- Row 6 — equals -->
+        <button class="calc-btn btn-equals btn-full" id="btnEquals" data-action="equals" aria-label="Equals">=</button>
+
+      </div>
+      <!-- /btn-grid -->
+
+      <p class="calc-footer">CodeAlpha Internship Project · Basireddy Lokeswara Reddy</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
