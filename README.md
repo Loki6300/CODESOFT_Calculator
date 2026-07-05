@@ -1,8 +1,8 @@
-# ⚡ Quantum Calc — CodeAlpha Internship Project
+# ⚡ Quantum Calc — Codesoft Internship Project
 
 A **premium glassmorphism calculator** built with pure HTML, CSS, and JavaScript.
 
-> **Internship Project** · Basireddy Lokeswara Reddy · CodeAlpha
+> **Internship Project** · Basireddy Lokeswara Reddy · Codesoft
 
 ---
 
